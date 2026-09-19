@@ -24,17 +24,23 @@ The app is a static site: every file lives at the repository root and every asse
 path is relative, so it runs unchanged from a GitHub Pages project URL.
 
 Deployment is automated by `.github/workflows/pages.yml`, which uploads the
-repository root as a Pages artifact and publishes it on every push. The
-workflow passes `enablement: true` to `actions/configure-pages`, so it creates
-the Pages site itself on the first run and no Settings change is required.
+repository root as a Pages artifact and publishes it on every push.
 
-The site is published to https://shekath.github.io/Smartpayment/ about a minute
-after each push. You can also start a deployment by hand from the **Actions**
-tab, using **Run workflow** on *Deploy to GitHub Pages*.
+One manual step is required before the first deploy can succeed. Creating a
+Pages site needs repository admin rights, and the token a workflow runs with
+does not have them, so the workflow cannot turn Pages on by itself:
 
-Note that the push trigger lists both `main` and the current deployment branch,
-so the site publishes before that branch is merged. Once `main` is the
-deployment source, drop the extra branch from the trigger.
+1. Open **Settings → Pages**.
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+
+After that, re-run the latest *Deploy to GitHub Pages* job from the **Actions**
+tab, or push any commit. The site appears at
+https://shekath.github.io/Smartpayment/ about a minute later, and every later
+push redeploys it with no further setup.
+
+The push trigger lists both `main` and the current deployment branch, so the
+site publishes before that branch is merged. Once `main` is the deployment
+source, drop the extra branch from the trigger.
 
 ### Running it locally
 
