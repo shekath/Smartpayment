@@ -1,0 +1,35 @@
+{
+  "name": "SmartPay \u2014 Nigeria",
+  "short_name": "SmartPay",
+  "description": "Redesigned Nigerian payment app prototype: NIP transfers, NQR scan-to-pay and offline USSD fallback.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#3B1D8F",
+  "theme_color": "#3B1D8F",
+  "lang": "en-NG",
+  "categories": [
+    "finance"
+  ],
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
